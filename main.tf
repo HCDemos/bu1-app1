@@ -34,7 +34,7 @@ resource "aws_instance" "web" {
   }
 }
 
-check "aws_instances_stopped" {
+check "aws_instance_stopped" {
   data "aws_instance" "web" {
     instance_state_names = "stopped"
   }
