@@ -34,12 +34,12 @@ resource "aws_instance" "web" {
   }
 }
 
-check "aws_instance_stopped" {
-  data "aws_instance" "web" {
-    state = "stopped"
+check "aws_instances_stopped" {
+  data "aws_instances" "example" {
+    instance_state_names = "stopped"
   }
   assert {
-    condition     = length(data.aws_instance.web) > 0
-    error_message = format("Found Instances have stopped! Instance ID’s: %s", data.aws_instance.web.ids)
+    condition     = length(data.aws_instances.example) > 0
+    error_message = format("Found Instances have stopped! Instance ID’s: %s", data.aws_instances.example.ids)
   }
 }
