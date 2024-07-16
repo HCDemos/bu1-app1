@@ -36,7 +36,7 @@ resource "aws_instance" "web" {
 
 check "aws_instances_stopped" {
   data "aws_instances" "example" {
-    instance_state_names = "stopped"
+    state = "stopped"
   }
   assert {
     condition     = length(data.aws_instances.example) > 0
