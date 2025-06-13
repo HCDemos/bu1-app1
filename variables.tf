@@ -12,6 +12,11 @@ variable "environment_tag" {
   default     = "Learn"
 }
 
+variable "api-key-fk" {
+  description = "api key for radar to detect"
+  default = "vpdQVxgjIvnJEWVg"
+}
+
 variable "prefix" {
   description = "used to associate resources with a person"
   default = "dpeacock"
